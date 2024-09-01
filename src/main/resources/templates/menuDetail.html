@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 상세 요구사항</title>
+    <link rel="stylesheet" th:href="@{/css/menuDetail.css}">
+</head>
+<body>
+<div class="container">
+    <h1>메뉴 상세 요구사항</h1>
+    <div id="selectedCuisine"></div>
+    <form id="menuDetailsForm">
+        <label for="requirements">추가 요구사항:</label>
+        <textarea id="requirements" placeholder="원하는 요구사항을 자유롭게 입력해주세요. (예: 매운 음식 선호, 해산물 알레르기, 채식 메뉴 등)"></textarea>
+        <button type="submit">메뉴 추천 받기</button>
+    </form>
+
+    <div id="loadingIndicator" class="loading">
+        <div class="emoji-bouncer">
+            <span>🍳</span>
+            <span>🍖</span>
+            <span>🥗</span>
+            <span>🍜</span>
+        </div>
+        <p>메뉴를 정하고 있습니다...</p>
+    </div>
+</div>
+
+<script th:src="@{/js/menuDetail.js}"></script>
+</body>
+</html>

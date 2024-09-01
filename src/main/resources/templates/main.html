@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐먹지 - 메인 페이지</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+<div class="container">
+    <div class="logo">오늘 뭐먹지 ?</div>
+    <div class="menu-text">오늘 메뉴, <span class="menu-highlight" id="menuHighlight"></span> 어떠세요?</div>
+    <div class="sub-text">오늘의 메뉴는 저희가 정해드릴게요! 🍕😋</div>
+    <button class="start-button" onclick="location.href='/menu'">추천 받기 ></button>
+    <div class="footer">
+        <a href="#">모바일 가이드</a> | <a href="#">서비스 정보</a>
+    </div>
+</div>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

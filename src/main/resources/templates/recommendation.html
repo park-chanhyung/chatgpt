@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 추천</title>
+    <link rel="stylesheet" th:href="@{/css/recommend.css}">
+</head>
+<body>
+<div class="container">
+    <h1>메뉴 추천</h1>
+
+    <div class="details">
+        <h3>선택한 카테고리</h3>
+        <p id="selectedCategory"></p>
+        <h3>추가 요구사항</h3>
+        <p id="additionalRequirements"></p>
+    </div>
+
+    <div class="ai-recommendation">
+        <h3>AI의 추천 메뉴</h3>
+        <p id="recommendedMenu"></p>
+        <h3>추천 이유</h3>
+        <p id="recommendationReason"></p>
+    </div>
+
+    <div id="loading" class="loading">처리 중입니다. 잠시만 기다려주세요...</div>
+    <div id="error" class="error"></div>
+
+    <a href="/menu" class="button">다시 선택하기</a>
+</div>
+
+<script th:src="@{/js/recommend.js}">
+</script>
+</body>
+</html>

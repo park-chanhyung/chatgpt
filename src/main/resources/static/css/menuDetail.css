@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 90%;
+    max-width: 800px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#selectedCuisine {
+    font-size: 2em;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#menuDetailsForm {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    resize: vertical;
+    flex-grow: 1;
+    min-height: 150px;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: rgb(53, 46, 41);
+}
+
+button {
+    background-color: rgb(53, 46, 41);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    margin-top: auto;
+}
+
+button:hover {
+    background-color: rgb(63, 26, 31);
+    transform: translateY(-2px);
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.emoji-bouncer {
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.emoji-bouncer span {
+    display: inline-block;
+    animation: bounce 0.6s ease infinite alternate;
+}
+
+@keyframes bounce {
+    to { transform: translateY(-15px); }
+}
+
+.loading p {
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: #2c3e50;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #selectedCuisine {
+        font-size: 1.5em;
+    }
+
+    textarea {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}

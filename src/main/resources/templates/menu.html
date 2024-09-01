@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐먹지?</title>
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+</head>
+<body>
+<div class="container">
+    <h1>어떤 메뉴가 좋을까요? 🍽️</h1>
+    <div class="cuisine-options">
+        <div class="cuisine-option" onclick="selectCuisine('중식')">
+            <img th:src="@{/files/중식.jpg}" alt="chineseFood" class="chineseFood">
+            <h2>중식</h2>
+        </div>
+        <div class="cuisine-option" onclick="selectCuisine('한식')">
+            <img th:src="@{/files/한식.jpg}" alt="koreanFood" class="koreanFood">
+            <h2>한식</h2>
+        </div>
+        <div class="cuisine-option" onclick="selectCuisine('양식')">
+            <img th:src="@{/files/양식.jpg}" alt="westernFood" class="westernFood">
+            <h2>양식</h2>
+        </div>
+        <div class="cuisine-option" onclick="selectCuisine('일식')">
+            <img th:src="@{/files/일식.jpg}" alt="japaneseFood" class="japaneseFood">
+            <h2>일식</h2>
+        </div>
+        <div class="cuisine-option" onclick="selectCuisine('아시안')">
+            <img th:src="@{/files/아시안푸드.png}" alt="japaneseFood" class="asianFood">
+            <h2>아시안</h2>
+        </div>
+        <div class="cuisine-option" onclick="selectCuisine('패스트푸드')">
+            <img th:src="@{/files/패스트푸드.png}" alt="fastFood" class="fastFood">
+            <h2>패스트푸드</h2>
+        </div>
+        <div class="cuisine-option" onclick="selectCuisine('디저트')">
+            <img th:src="@{/files/dessert.png}" alt="dessert" class="dessert">
+            <h2>카페/디저트</h2>
+        </div>
+        <div class="cuisine-option" onclick="selectCuisine('배달음식')">
+            <img th:src="@{/files/치킨.png}" alt="delivery" class="delivery">
+            <h2>배달시켜먹을거에요</h2>
+        </div>
+        <div class="random-option" onclick="selectCuisine('상관없음')">
+            <h2>🎲 아무거나 추천해주세요</h2>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectCuisine(cuisine) {
+        window.location.href = '/menu-details?cuisine=' + encodeURIComponent(cuisine);
+    }
+</script>
+</body>
+</html>
