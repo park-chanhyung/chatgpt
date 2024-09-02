@@ -1,49 +1,3 @@
-//package com.demo.chatgpt.controller;
-//
-//
-//import com.demo.chatgpt.model.ChatRequest;
-//import com.demo.chatgpt.model.ChatResponse;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.*;
-//import org.springframework.web.client.RestTemplate;
-//
-//@Controller
-//public class MainController {
-//    @Autowired
-//    RestTemplate restTemplate;
-//
-//    @GetMapping("/")
-//    public String mainPage() {
-//        return "main";
-//    }
-//    @GetMapping("/chat")
-//    public String chatPage(Model model) {
-//        // 필요한 경우 여기에 모델 속성을 추가할 수 있습니다.
-//        return "chat";
-//    }
-//    @GetMapping("/menu")
-//    public String indexPage() {
-//        // 필요한 경우 여기에 모델 속성을 추가할 수 있습니다.
-//        return "menu";
-//    }
-//    @GetMapping("/menu-details")
-//    public String menuDetailsPage(@RequestParam String cuisine, Model model) {
-//        model.addAttribute("cuisine", cuisine);
-//        return "menuDetail";
-//    }
-//    @PostMapping("/hitOpenAiApi")
-//    @ResponseBody
-//    public String getOpenAiResponse(@RequestBody String prompt) {
-//        ChatRequest chatRequest = new ChatRequest("gpt-3.5-turbo", prompt);
-//
-//        ChatResponse response =
-//                restTemplate.postForObject("https://api.openai.com/v1/chat/completions", chatRequest, ChatResponse.class);
-//        return response.getChoices().get(0).getMessage().getContent();
-//    }
-//}
-
 package com.demo.chatgpt.controller;
 
 import com.demo.chatgpt.dto.RecommendationRequest;
@@ -118,13 +72,3 @@ public class MainController {
         }
     }
 }
-//    @PostMapping("/hitOpenAiApi")
-//    @ResponseBody
-//    public String getOpenAiResponse(@RequestBody String prompt) {
-//        ChatRequest chatRequest = new ChatRequest("gpt-3.5-turbo", prompt);
-//
-//        ChatResponse response =
-//                restTemplate.postForObject("https://api.openai.com/v1/chat/completions", chatRequest, ChatResponse.class);
-//        return response.getChoices().get(0).getMessage().getContent();
-//    }
-//}
