@@ -66,6 +66,7 @@ public class MainController {
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("메뉴 추천 중 오류 발생: " + e.getMessage());
+
         }
     }
 }
