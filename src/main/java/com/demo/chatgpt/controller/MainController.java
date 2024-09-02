@@ -23,10 +23,7 @@ public class MainController {
         return "main";
     }
 
-    @GetMapping("/chat")
-    public String chatPage(Model model) {
-        return "chat";
-    }
+
 
     @GetMapping("/menu")
     public String indexPage() {
@@ -51,10 +48,12 @@ public class MainController {
     public ResponseEntity<?> getRecommendation(@RequestBody RecommendationRequest request) {
         try {
             String prompt = String.format(
-                    "당신은 전문 요리사이자 AI 메뉴 추천 시스템입니다. 다음 조건에 맞는 %s 요리 메뉴를 1개 추천해주세요. 추가 요구사항: %s\n\n" +
-                            "응답 형식:\n" +
-                            "추천 메뉴: [메뉴 이름]\n" +
-                            "추천 이유: [2-3문장으로 이 메뉴를 추천한 이유를 설명해주세요. 요청한 요구사항과 연관지어 설명하고, AI다운 통찰력있는 코멘트를 추가해주세요.]",
+                    """
+                            당신은 전문 요리사이자 AI 메뉴 추천 시스템입니다. 다음 조건에 맞는 %s 요리 메뉴를 1개 추천해주세요. 추가 요구사항: %s
+
+                            응답 형식:
+                            추천 메뉴: [메뉴 이름]
+                            추천 이유: [2-3문장으로 이 메뉴를 추천한 이유를 설명해주세요. 요청한 요구사항과 연관지어 설명하고, AI다운 통찰력있는 코멘트를 추가해주세요.]""",
                     request.getCuisine(), request.getRequirements());
 
             ChatRequest chatRequest = new ChatRequest("gpt-4.0-mini", prompt);
@@ -69,6 +68,7 @@ public class MainController {
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("메뉴 추천 중 오류 발생: " + e.getMessage());
+
         }
     }
 }
