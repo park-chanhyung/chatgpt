@@ -57,7 +57,7 @@ public class MainController {
                             "추천 이유: [2-3문장으로 이 메뉴를 추천한 이유를 설명해주세요. 요청한 요구사항과 연관지어 설명하고, AI다운 통찰력있는 코멘트를 추가해주세요.]",
                     request.getCuisine(), request.getRequirements());
 
-            ChatRequest chatRequest = new ChatRequest("gpt-3.5-turbo", prompt);
+            ChatRequest chatRequest = new ChatRequest("gpt-4.0-mini", prompt);
             ChatResponse response = restTemplate.postForObject("https://api.openai.com/v1/chat/completions", chatRequest, ChatResponse.class);
 
             if (response != null && response.getChoices() != null && !response.getChoices().isEmpty()) {
